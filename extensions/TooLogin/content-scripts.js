@@ -34,7 +34,7 @@ window.onload = () => {
         stop++;
       }
     });
-    if (stop === Object.keys(elements).length) {
+    if (stop === elements.length) {
       clearInterval(interval);
       console.log('stop check');
     }
