@@ -7,20 +7,18 @@ window.onload = () => {
   let interval;
 
   if (onCurrentURL('bigsy.toolsurf.com')) {
-    const elements = [
-      document.getElementById('gray-mask'),
-      document.getElementById('popup-content'),
-    ];
-    makeInterval(elements);
+    interval = setInterval(() => {
+      const elements = [
+        document.getElementById('gray-mask'),
+        document.getElementById('popup-content'),
+      ];
+      toolCleaner(elements);
+    }, timeout);
   }
 
   if (onCurrentURL('t10.toolsurf.com')) {
-    const elements = [document.getElementById('srf-browser-unhappy')];
-    makeInterval(elements);
-  }
-
-  function makeInterval(elements) {
     interval = setInterval(() => {
+      const elements = [document.getElementById('srf-browser-unhappy')];
       toolCleaner(elements);
     }, timeout);
   }
